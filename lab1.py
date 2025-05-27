@@ -25,6 +25,10 @@ def solve_quadratic(a, b, c):
 def interactive_mode():
     print("Interactive mode. Enter coefficients:")
     a = get_valid_number("a = ")
+    if a == 0:
+        print("Error: 'a' cannot be zero")
+        return
+    
     b = get_valid_number("b = ")
     c = get_valid_number("c = ")
     
