@@ -22,6 +22,13 @@ def solve_quadratic(a, b, c):
     else:
         return []
 
+def format_solutions(solutions):
+    if not solutions:
+        return "There are 0 roots"
+    if len(solutions) == 1:
+        return f"There is 1 root: x1 = {solutions[0]:.1f}"
+    return f"There are 2 roots: x1 = {solutions[0]:.1f}, x2 = {solutions[1]:.1f}"
+
 def interactive_mode():
     print("Interactive mode. Enter coefficients:")
     a = get_valid_number("a = ")
@@ -33,6 +40,6 @@ def interactive_mode():
     c = get_valid_number("c = ")
     
     solutions = solve_quadratic(a, b, c)
-    print("Solutions:", solutions)
+    print(format_solutions(solutions))
 
 interactive_mode()
